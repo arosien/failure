@@ -6,7 +6,7 @@ Example:
 
     import asr.failure.FailureDetector;
 
-    FailureDetector detector = new FailureDetector(windowSize, minSamples);
+    final FailureDetector detector = new FailureDetector(windowSize, minSamples);
 
     new Thread(new Runnable() {
         public void run() {
