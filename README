@@ -1,0 +1,25 @@
+A failure detector as described in "The Phi Accrual Failure Detector" (Hayashibara, et al., 2004).
+
+TODO: Need license, oops!
+
+Example:
+
+    import asr.failure.FailureDetector;
+
+    FailureDetector detector = new FailureDetector(windowSize, minSamples);
+
+    new Thread(new Runnable() {
+        public void run() {
+            while (doingStuff) {
+                detector.recordHeartbeat(System.currentTimeMillis());
+            }
+        }
+    ).start();
+
+    while (doingOtherStuff) {
+        Double phi = detector.phi(System.currentTimeMillis());
+
+        if (phi != null && phi > threshold) {
+            // failure!
+        }
+    }
