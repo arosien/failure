@@ -1,7 +1,5 @@
 A failure detector as described in "The Phi Accrual Failure Detector" (Hayashibara, et al., 2004).
 
-TODO: Need license, oops!
-
 Example:
 
     import asr.failure.FailureDetector;
